@@ -1,0 +1,95 @@
+---
+const menu = [
+  {
+    title: "Home",
+  },
+  {
+    title: "Instructores",
+  },
+  {
+    title: "Contact",
+  },
+];
+---
+
+<header
+  class="bg-[url('/images/baile-banner.jpg')] w-full h-[300px] lg:h-[450px] xl:h-[700px] bg-cover bg-center
+flex justify-center items-center"
+>
+  <div
+    class="container items-center lg:items-center  xl:max-w-5xl xs:max-w-7xl h-64 text-white
+    flex-col
+    xs:flex-row
+    pt-10
+    xs:p-0
+    lg:p-0
+    xl:p-0
+    md:p-0
+    xs:items-center
+    sm:flex-row
+    sm:m-auto
+    md:flex
+    lg:flex
+    xl:flex
+    "
+
+  >
+  <div class="">
+    <h2 class="text-center items-center text-2xl font-serif">Academia de baile</h2>
+    <h1
+      class="text-center items-center text-5xl sm:text-6xl xl:text-7xl lg:text-7xl md:text-6xl font-bold font-serif"
+    >
+      Sensación <br /> Latina
+    </h1>
+    <nav>
+      <ul
+        class=" text-center flex justify-center
+        p-3
+        xl:pt-10
+        lg:pt-10
+        text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl font-bold font-sans
+       text-sky-200
+        gap-10
+        lg:m-auto
+        xl:m-auto
+        md:m-auto
+        "
+      >
+        {
+          menu.map((menu) => (
+            <li class="link-underline link-underline-black ">
+              <a href={`#${menu.title}`}>
+                {menu.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+
+  </div>
+</header>
+
+<style>
+  .link-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent),
+      linear-gradient(#fff, #fff);
+    background-size: 0 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s ease-in-out;
+  }
+
+  .link-underline-black {
+    background-image: linear-gradient(transparent, transparent),
+      linear-gradient(#f2c, #f2c);
+  }
+
+  .link-underline:hover {
+    background-size: 100% 3px;
+    background-position: 0 100%;
+  }
+
+</style>
