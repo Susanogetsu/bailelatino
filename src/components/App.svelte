@@ -4,6 +4,8 @@
   import { submit, nombre } from "../store";
 
   import { onMount } from "svelte";
+  import Ritmos from "./Ritmos.svelte";
+
   onMount(() => {
     const up = document.getElementById("Up");
     const home = document.getElementById("Home");
@@ -16,7 +18,6 @@
         up.classList.remove("hidden");
       }
     }
-
     // Asignar la función al evento de scroll de la ventana
     window.addEventListener("scroll", ocultarMostrarBoton);
   });
@@ -24,30 +25,37 @@
 
 <main class="w-full min-h-screen">
   <section
+  id="Ritmos"
+  class="flex flex-col justify-center h-[700px] bg-gradient-to-r from-slate-100 via-slate-200 to-fuchsia-300 p-10"
+> 
+  <Ritmos />
+</section>  
+  <section
     id="Instructores"
-    class="flex flex-col bg-gradient-to-r from-yellow-300 via-rose-300 to-orange-300"
+    class="xs:h-[auto] lg:h-[700px] flex flex-col justify-center items-center bg-gradient-to-r from-lime-200 via-slate-200 to-slate-100 p-10"
   >
-    <h1 class="pt-[80px] text-center text-6xl font-bold font-serif opacity-60">
-      Instructores
-    </h1>
-    <div class="h-[600px] flex justify-evenly items-center gap-2">
+      <h2 class="text-5xl font-bold font-serif opacity-60 mb-20">
+    Instructores
+  </h2>  
+    <div class="container max-w-5xl flex justify-evenly items-center gap-2 ">
       <Instructores />
     </div>
+
   </section>
 
   <section
-    id="Contact"
-    class="flex bg-gradient-to-r from-teal-300 via-cyan-300 to-sky-300"
+    id="Contacto"
+    class="bg-gradient-to-r from-slate-200 via-cyan-300 to-slate-200"
   >
-    <div class="flex justify-evenly items-center w-full p-10 gap-2">
+    <div class="flex justify-evenly items-center w-full h-[700px] p-10 gap-2">
       <div class="text-center font-bold font-serif opacity-60">
         {#if $submit}
           <h2 class="text-5xl">¡Gracias por <br /> contactarnos!</h2>
           <p class="capitalize text-4xl pt-10">{$nombre}</p>
         {:else}
-          <h2 class="text-5xl">Contáctanos</h2>
+          <h2 class="text-5xl">¡Bailemos juntos!</h2>
         {/if}
-      </div>
+      </div>  
       <Contact />
     </div>
   </section>
